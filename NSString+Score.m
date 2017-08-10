@@ -26,7 +26,7 @@
 }
 
 - (NSCharacterSet *)invalidCharacterSet {
-    NSMutableCharacterSet *workingInvalidCharacterSet = [NSCharacterSet lowercaseLetterCharacterSet];
+    NSMutableCharacterSet *workingInvalidCharacterSet = [[NSCharacterSet lowercaseLetterCharacterSet] mutableCopy];
     [workingInvalidCharacterSet formUnionWithCharacterSet:[NSCharacterSet uppercaseLetterCharacterSet]];
     [workingInvalidCharacterSet addCharactersInString:@" "];
     NSCharacterSet *invalidCharacterSet = [workingInvalidCharacterSet invertedSet];
