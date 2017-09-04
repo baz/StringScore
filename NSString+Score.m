@@ -144,7 +144,7 @@
     
     if(NSStringScoreOptionReducedLongStringPenalty == (options & NSStringScoreOptionReducedLongStringPenalty)){
         // Reduce the penalty for longer words
-        CGFloat percentageOfMatchedString = otherStringLength / stringLength;
+		CGFloat percentageOfMatchedString = stringLength ? otherStringLength / stringLength : 0;
         CGFloat wordScore = otherStringScore * percentageOfMatchedString;
         finalScore = (wordScore + otherStringScore) / 2;
         
